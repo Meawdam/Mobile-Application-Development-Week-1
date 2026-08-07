@@ -2,10 +2,11 @@
 
 ## Week 1 - Introduction to Dart
 
-### 1. Create a Dart Project
+### 1. Start a Dart Project
 
 📄 Terminal
 
+1. Create Dart Project
 ```bash
 dart create hello_dart
 cd hello_dart
@@ -16,6 +17,14 @@ Output
 
 ```text
 Hello world!
+```
+
+2. Clone the Dart Project
+```bash
+git clone https://github.com/Meawdam/Mobile-Application-Development-Week-1
+cd Mobile-Application-Development-Week-1
+dart pub get
+dart run
 ```
 
 ---
