@@ -42,7 +42,7 @@ void data() {
     {'name': 'John', 'age': 30, 'origin': 'Japan'},
     {'name': 'Mary', 'age': 28, 'origin': 'USA'}
   ];
-
+  
   for(Map<String, dynamic> tourist in tourists) {
     print(tourist['name']);
     print(tourist['age']);
