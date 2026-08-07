@@ -9,4 +9,7 @@ void main(List<String> arguments) {
   // input();
   looping();
   data();
+  print(multiply(2, 10));
 }
+
+int multiply(int one, int two) => one * two;
