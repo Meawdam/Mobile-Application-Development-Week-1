@@ -1,3 +1,5 @@
+import 'package:main/hello.dart';
+
 void main(List<String> arguments) {
-  print("Hello, Dart!");
+  print(hello("Dart"));
 }
