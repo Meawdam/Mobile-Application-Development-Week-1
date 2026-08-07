@@ -8,11 +8,9 @@ void variable() {
   String name = "Peter";
 
   print('name: $name is $age years old, gpax: $gpax');
-  
+
   if (status == true) {
-    print('Your status is active');
-  } else {
-    print('Your status is inactive');
+    print('Your status is active \n');
   }
 
   //shorthnad if else statement
