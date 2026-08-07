@@ -25,4 +25,27 @@ void data() {
     totalPrice += product;
   }
   print('\nTotal price: $totalPrice');
+
+  // map => JS object / JSON => (keys, values)
+  Map<String, dynamic> tourist = {
+    'name': 'Peter',
+    'origin': 'Taiwan',
+    'age': 25
+  };
+  print(tourist['name']);
+  print(tourist['age']);
+  print(tourist['origin']);
+
+  // list of maps => Js object arrays
+  List<Map<String, dynamic>> tourists = [
+    {'name': 'Tom', 'age': 25, 'origin': 'Taiwan'},
+    {'name': 'John', 'age': 30, 'origin': 'Japan'},
+    {'name': 'Mary', 'age': 28, 'origin': 'USA'}
+  ];
+
+  for(Map<String, dynamic> tourist in tourists) {
+    print(tourist['name']);
+    print(tourist['age']);
+    print(tourist['origin']);
+  }
 }
