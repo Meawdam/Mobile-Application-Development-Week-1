@@ -1,18 +1,18 @@
-# Mobile Application Development - `Week 1`
+# Mobile Application Development
 
-## 1. Create a Dart Project
+## Week 1 - Introduction to Dart
 
-Create a new Dart console project.
+### 1. Create a Dart Project
 
-### 📄 Terminal
+📄 Terminal
 
 ```bash
-dart create my_first_dart
-cd my_first_dart
+dart create hello_dart
+cd hello_dart
 dart run
 ```
 
-Expected output:
+Output
 
 ```text
 Hello world!
@@ -20,240 +20,309 @@ Hello world!
 
 ---
 
-## 2. Project Structure
+### 2. Compile a Dart Program
 
-After creating the project, you should see something like this:
+📄 Terminal
+
+```bash
+dart compile exe main.dart
+```
+
+Creates
 
 ```text
-my_first_dart/
+main.exe
+```
+
+Run it
+
+```bash
+./main
+```
+
+or
+
+```bash
+.\main
+```
+
+You can also compile to a kernel file.
+
+```bash
+dart compile kernel main.dart
+dart run main.dill
+```
+
+---
+
+### 3. Project Structure
+
+```text
+hello_dart/
 ├── bin/
-│   └── my_first_dart.dart
+│   └── hello_dart.dart
 ├── lib/
 ├── test/
 ├── pubspec.yaml
-├── analysis_options.yaml
-├── CHANGELOG.md
 └── README.md
 ```
 
-### 📄 `bin/my_first_dart.dart`
+---
 
-This is the entry point of your application.
+### 4. Hello World
+
+📄 `bin/hello_dart.dart`
 
 ```dart
 void main() {
-  print('Hello world!');
+  print("Hello World");
 }
 ```
 
 ---
 
-## 3. The `main()` Function
+### 5. Variables
 
-Every Dart application starts with the `main()` function.
+- int
+- double
+- String
+- bool
+- var
 
-### 📄 `bin/my_first_dart.dart`
-
-```dart
-void main() {
-  print("Hello Dart!");
-}
-```
-
-Output
-
-```text
-Hello Dart!
-```
-
----
-
-## 4. Printing Text
-
-Use `print()` to display text on the console.
-
-### 📄 `bin/my_first_dart.dart`
+📄 `bin/hello_dart.dart`
 
 ```dart
 void main() {
-  print("Hello");
-  print("Welcome to Dart");
-}
-```
-
-Output
-
-```text
-Hello
-Welcome to Dart
-```
-
----
-
-## 5. Variables
-
-Variables are used to store data.
-
-### 📄 `bin/my_first_dart.dart`
-
-```dart
-void main() {
-  String name = "Alice";
   int age = 20;
-  double height = 172.5;
-  bool isStudent = true;
-
-  print(name);
-  print(age);
-  print(height);
-  print(isStudent);
-}
-```
-
----
-
-## 6. Data Types
-
-| Type      | Example         |
-| --------- | --------------- |
-| `String`  | `"Hello"`       |
-| `int`     | `100`           |
-| `double`  | `3.14`          |
-| `bool`    | `true`, `false` |
-| `dynamic` | Any type        |
-
-Example
-
-### 📄 `bin/my_first_dart.dart`
-
-```dart
-void main() {
-  dynamic value = "Hello";
-  print(value);
-
-  value = 100;
-  print(value);
-}
-```
-
----
-
-## 7. String Interpolation
-
-Instead of concatenating strings, Dart supports string interpolation.
-
-### 📄 `bin/my_first_dart.dart`
-
-```dart
-void main() {
+  double pi = 3.14;
   String name = "John";
-  int age = 21;
+  bool student = true;
+
+  var score = 90;
 
   print("My name is $name");
-  print("I am $age years old");
 }
 ```
 
 ---
 
-## 8. Comments
+### 6. User Input
 
-### Single-line comment
-
-```dart
-// This is a comment
-```
-
-### Multi-line comment
+📄 `bin/hello_dart.dart`
 
 ```dart
-/*
-This is
-a multi-line comment
-*/
+import 'dart:io';
+
+void main() {
+  stdout.write("Name: ");
+  String? name = stdin.readLineSync();
+
+  print("Hello $name");
+}
 ```
 
-### Documentation comment
+---
+
+### 7. Operators
+
+Arithmetic
 
 ```dart
-/// This function prints a greeting.
+print(1 + 2);
+print(1 - 2);
+print(1 * 2);
+print(1 / 2);
+print(1 ~/ 2);
+print(1 % 2);
+```
+
+Comparison
+
+```dart
+==
+!=
+<
+>
+<=
+>=
+```
+
+Logical
+
+```dart
+&&
+||
+!
 ```
 
 ---
 
-## 9. Run the Project
+### 8. Null Safety
 
-### 📄 Terminal
+```dart
+String? name;
 
-```bash
-dart run
-```
+print(name ?? "Unknown");
 
-or specify the file
-
-```bash
-dart run bin/my_first_dart.dart
+name ??= "John";
 ```
 
 ---
 
-## 10. Practice
+### 9. Loops
 
-### Exercise 1
+For
 
-Create variables for:
-
-* Your name
-* Your age
-* Your height
-* Are you a student?
-
-Print them to the console.
-
----
-
-### Exercise 2
-
-Print the following message using string interpolation.
-
-```
-My name is John.
-I am 20 years old.
+```dart
+for (int i = 1; i <= 5; i++) {
+  print(i);
+}
 ```
 
----
+While
 
-### Exercise 3
+```dart
+while (...) {}
+```
 
-Create two integer variables.
+Do While
 
-Print their:
+```dart
+do {
 
-* Sum
-* Difference
-* Product
-* Quotient
-
----
-
-### Exercise 4
-
-Create a variable using `dynamic`.
-
-Store a string, then change it to a number and print both values.
+} while (...);
+```
 
 ---
 
-## Summary
+### 10. Collections
 
-Today you learned:
+#### List
 
-* ✅ Create a Dart project
-* ✅ Project structure
-* ✅ `main()` function
-* ✅ `print()`
-* ✅ Variables
-* ✅ Data types
-* ✅ String interpolation
-* ✅ Comments
-* ✅ Running a Dart project
+```dart
+List<int> numbers = [1, 2, 3];
+```
+
+#### Set
+
+```dart
+Set<String> names = {"Tom", "Sara"};
+```
+
+#### Map
+
+```dart
+Map<String, int> student = {
+  "Tom": 20
+};
+```
+
+#### List of Map
+
+```dart
+var products = [
+  {"name": "Book", "price": 80},
+  {"name": "Pen", "price": 55},
+];
+```
+
+---
+
+### 11. Functions
+
+```dart
+int add(int a, int b) {
+  return a + b;
+}
+```
+
+Named parameter
+
+```dart
+double multiply({
+  required double first,
+  required double second,
+}) {
+  return first * second;
+}
+```
+
+Arrow function
+
+```dart
+double divide(int a, int b) => a / b;
+```
+
+Optional parameter
+
+```dart
+double minus(double a, [double b = 0]) {
+  return a - b;
+}
+```
+
+---
+
+### 12. Classes
+
+```dart
+class Point {
+  double x;
+  double y;
+
+  Point(this.x, this.y);
+}
+```
+
+Object
+
+```dart
+void main() {
+  var point = Point(2, 5);
+
+  print(point.x);
+}
+```
+
+---
+
+### 13. Getter & Setter
+
+```dart
+class Student {
+  String _name;
+
+  Student(this._name);
+
+  String get name => _name;
+
+  set name(String value) => _name = value;
+}
+```
+
+---
+
+## Exercises
+
+- Exercise 1 — Hello World
+- Exercise 2 — Variables
+- Exercise 3 — Console Input
+- Exercise 4 — Operators
+- Exercise 5 — Null Checking
+- Exercise 6 — Loops
+- Exercise 7 — List
+- Exercise 8 — List Iteration
+- Exercise 9 — Set
+- Exercise 10 — Map
+- Exercise 11 — List of Map
+- Exercise 12 — Functions
+- Exercise 13 — Optional Parameters
+- Exercise 14 — Classes
+
+---
+
+## Assignments
+
+1. Sum all digits in your student ID.
+2. Read a user's name and age from the console and validate the input.
+3. Build a simple login system using a list of user accounts.
